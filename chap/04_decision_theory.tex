@@ -3,8 +3,38 @@
 %TODO How does decision theory relate to MAS?
 \subsection{The difference between Nash Equilibrium and Pareto Optimum?}
 %TODO The difference between Nash Equilibrium and Pareto Optimum?
+Zwei Strategien $s_i$ und $s_j$ befinden sich im \textbf{Nash-Gleichgewicht}, falls
+\begin{enumerate}
+	\item gegeben der Annahme, dass Agent $i$ Strategie $s_i$ verfolgt, Agent $j$ am Besten Strategie $s_j$ verfolgt \textbf{und}
+	\item gegeben der Annahme, dass Agent $j$ Strategie $s_j$ verfolgt, Agent $i$ am Besten Strategie $s_i$ nutzt.
+\end{enumerate}
+Eine Zustand $s$ (resultierend aus den Strategien der Agenten) ist \textbf{Pareto-Optimal}, wenn es keinen anderen Zustand $s'$ gibt, in dem a) jeder einzelne Agent mindestens den selben Gewinn hat, wie in $s$ und b) mindestens ein Agent mehr Gewinn erzielt. 
+
+\begin{itemize}
+	\item Das Nash-Gleichgewicht bezieht sich auf ein Paar von \textbf{Strategien}, Pareto-Optimalität hingegen auf einen \textbf{konkreten Ausgang}.
+	\item Es gibt nicht immer ein Nash-Gleichgewicht, pareto-optimale Ausgänge hingegen schon.
+	\item Ein Zustand, der durch die Wahl zweier Strategien im Nash-Gleichgewicht entsteht, ist nicht zwangsläufig pareto-optimal und umgekehrt. 
+\end{itemize}
 \subsection{Given the current example, what is the Nash Equilibrium what the pareto Optimum?}
 %TODO Given the current example, what is the Nash Equilibrium what the pareto Optimum?
+\begin{table}[]
+	\centering
+	\label{my-label}
+	\begin{tabular}{ll|l|l|}
+		&        & \multicolumn{2}{c|}{i} \\
+		&        & defect      & coop     \\ \hline
+		\multirow{2}{*}{j} & defect & 1 1         & 5 0      \\ \cline{2-4} 
+		& coop   & 0 5         & 3 3      \\ \hline
+	\end{tabular}
+	\caption{Payoff Matrix: Prisoners Dilemma}
+\end{table}
+Die Strategien $(d,d)$ sind im Nash-Gleichgewicht, weil $i$, wenn $j$ die Strategie $d$ spielt den höchsten Gewinn mit der Strategie $d$ (1) hat und umgekehrt.
+Dieser Ausgang ist nicht pareto-optimal, da die Strategien (c,c) für beide eine höhere Auszahlung bringen.
+
+Der Ausgang der Strategien $(d,c)$ ist pareto-optimal, da $j$ in allen anderen Ausgängen einen geringeren Payoff, als 5 hat. Analog dazu $(c,d)$.
+
+$(c,c)$ ist pareto-optimal, da $(d,c)$ und $(c,d)$ jeweils für mindestens einen Teilnehmer einen Payoff von 0 (< 3) bedeutet und $(d,d)$ für beide weniger Gewinn bringt.
 \subsection{How can we derive different strategies from Pay Off matrices?}
 %TODO How can we derive different strategies from Pay Off matrices?
+
 \subsection{Prisoners Dilemma why is it interesting?}
