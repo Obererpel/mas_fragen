@@ -1,11 +1,36 @@
 \section{Logic}
 \subsection{How can we use logic to infer an action?}
-%TODO How can we use logic to infer an action?
+\begin{itemize}
+	\item Logische Agenten: Wissensbasis + Regelmenge zum Schließen (Aussagenlogik, Prädikatenlogik, Modallogik usw)
+	\item Beobachtung der Umwelt und Generierung der Perception
+	\item Aktualisierung der Wissensbasis
+	\item Überprüfe ob eine Aktion direkt abgeleitet werden kann $\delta \vDash do(a)$, führe a aus falls a abgeleitet werden kann
+	\item Falls keine Aktion gefunden: Überprüfe ob eine Aktion nicht direkt ausgeschlossen werden kann: $\delta \not \vDash \neg do(a)$, für a aus falls a nicht direkt ausgeschlossen werden kann
+\end{itemize}
 \subsection{How does this relate to BDI agents?}
-%TODO How does this relate to BDI agents?
+\begin{itemize}
+	\item BDI-Agenten: Beliefes (Wissensbasis über Welt, eigene Fähigkeiten und anderen Agenten), Disires (Ziele welche längerfristig erreicht werden sollen), Intention (Teilziel welches aktuell verfolgt wird)
+	\item Definition der Semantik von B,D,I und deren Zusammenhänge auf Basis von Modallogik + CTL
+\end{itemize}
 \subsection{What is modal logic, the kripke semantic?}
+\begin{itemize}
+	\item Kripke-Struktur: $<W,R,\mu>$
+	\item W eine Menge von Welten
+	\item R eine Übergangsrelation zwischen den Welten
+	\item $\mu$ eine Funktion welcher jeder logischen Variable ein Wert zu weist
+	\item Modallogik: neue Operatoren $\square$(notwendigerweise), $\diamond$(möglicherweise)
+	\item Definition der Operatoren auf den Welten
+	\item $<M,w>\vDash\square p$: falls für jedes $(w,w') \in R$ gilt $<M,w'> \vDash p$ (Wenn p ausgehend von der aktuellen Welt w  in jeder erreichbaren Welt $w'$ wahr ist)
+	\item $<M,w>\vDash\diamond p$: falls für ein $(w,w') \in R$ gilt $<M,w'> \vDash p$ (Wenn p ausgehend von der aktuellen Welt w mindestens eine Welt erreichbar ist wo $w'$ gilt)
+	\item Semantik von modal Logik hängt von den geforderten Axiomen ab
+	\end{itemize}
 %TODO What is modal logic, the kripke semantic?
 \subsection{What does positiv introspection or negative introspection mean?}
+\begin{itemize}
+	\item gilt für Wissen von Agenten über mehere Agenten
+	\item positv: $K_i p \rightarrow K_i K_i p$ (Wenn Agent p glaubt, weiss dieser das er p glaubt)
+	\item negativ: $\not K_i \not p \rightarrow K_i \not K_i \not p$ (Wenn Agent nicht p glaubt, weiss dieser das er  nicht p glaubt; ein Agent weiss was er nicht weiss)
+\end{itemize}
 %TODO What does positiv introspection or negative introspection mean?
 \subsection{Given the following example, what can an agent deduce about a situation based on modal logic?}
 %TODO Given the following example, what can an agent deduce about a situation based on modal logic?
