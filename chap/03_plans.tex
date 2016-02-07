@@ -1,8 +1,30 @@
 \section{Plans}
 \subsection{Explain the subsumption architecture!}
-%TODO Explain the subsumption architecture!
+\begin{itemize}
+	\item Ziel: Spezifikation von Agentenverhalten ohne Symbolische Repräsentation der Umwelt
+	\item Verhalten wird direkt von den Zustand auf eine Aktion
+	\item Zustand entsteht durch die Verarbeitung der Beobachtungen
+	\item Direkte Koppelung zwischen Zustände und Aktionen
+	\item Verhalten ist mehrschichtig d.h. es gibt verschiedene Ebenen welche jeweils einen kleinen Teil des Verhaltens spezifiziert
+	\item jedes Verhalten hat eine priorität, je geringer die Ebene desto höher die Priorität
+	\item Algorithmus:
+	\begin{itemize}
+		\item Beobachte Umwelt
+		\item ermittle aller möglichen Aktionen
+		\item führe die Aktion mit der höchsten Priorität aus
+	\end{itemize}
+\end{itemize}
 \subsection{Extend the BDI architecture to balance committment and opportunity seeking!}
-%TODO Extend the BDI architecture to balance committment and opportunity seeking!
+\begin{itemize}
+	\item Standard BDI: Beobachtung der Umwelt, Aktualisierung der Wissensbasis, Ermittle ausführbaren Optionen unter Verwendung der Beliefes und Intention, Filtere die aktuelle Intention aus der Wissensbasis + Desires + Intentionen, Ermittlere Plan, Führe Plan aus
+	\item Problem: Agent verfolgt solange aktuelle Intention bis er glaubt diese erreicht zu haben (Blind Commitment)
+	\item Lösungen:
+	\begin{itemize}
+		\item Single-Mindes Commitment: Agent verfolgt solange Intention bis er diese erreicht hat oder die Intention nicht mehr erreicht werden kann (Wie vorher nur für jeden Schritt im Plan wird überprüft ob nach der neuen Beobachtung das Zeil noch immer erreicht werden kann; falls nicht ermittlere neuen Plan)
+		\item Open-minded Commitment: Agent verfolgt solange Intention wie er glaubt das diese noch möglich ist ???
+	\end{itemize}
+	\item Problem: Commmitments brauchen viel Rechenzeit (ständige neu Ermittelung usw)
+\end{itemize}
 \subsection{What is a plan and how are those developed, present a simple algorithm and describe its characteristics!}
 %TODO What is a plan and how are those developed, present a simple algorithm and describe its characteristics!
 \subsection{Different types of committment, what can we be committed to?}
