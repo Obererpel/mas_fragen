@@ -1,10 +1,71 @@
 \section{Negotiation Auction}
 \subsection{Why do agents need to negotiate?}
-%TODO Why do agents need to negotiate?
+%CHECK Why do agents need to negotiate?
+\begin{itemize}
+	\item Häufig gibt es Ressourcen, die ein Agent besitzt, die jedoch andere Agenten auch haben wollen.
+	\item Da die Ressource nur an einen (oder wenige) Agenten weitergegeben werden kann, muss dieser eine irgendwie bestimmt werden.
+	\item Weiterhin können sich Agenten Aufgaben untereinander aufteilen.
+\end{itemize}
 \subsection{The desirable properties of the rules of encounters, give example what are the implications of the different auctions?}
-%TODO The desirable properties of the rules of encounters, give example what are the implications of the different auctions?
+%CHECK The desirable properties of the rules of encounters, give example what are the implications of the different auctions?
+Geklaut aus der Zsf.
+\begin{multicols}{2}
+\subsubsection{Englische Auktion}
+\begin{itemize}
+	\item höchstes Gebot gewinnt, für alle sichtbar, aufsteigend
+	\item Dominante Strategie: minimale Erhöhung des höchsten Gebotes bis Obergrenze erreicht, falls diese überschritten: Rückzug
+	\item Anfällig: Fluch des Gewinners (Bezahlt meistens zuviel), Lockvögel (Agent arbeitet mit Auktionator zusammen und treibt den Preis künstlich in die Höhe)
+\end{itemize}
+\subsubsection{Holländische Auktion}
+\begin{itemize}
+	\item offene Gebote, absteigend
+	\item Auktionator startet mit hohen Startgebot
+	\item Auktionator senkt Preis bis Agent ein Gebot zu dem Preis abgiebt
+	\item Gewinner: Agent mit der Preisabgabe
+\end{itemize}
+\subsubsection{First-Price Sealed-Bid Auction}
+\begin{itemize}
+	\item einmaliges Gebot, verborgen
+	\item eine Runde
+	\item Bieter sendet Gebot
+	\item Bieter mit höchstem Gebot gewinnt
+	\item Gewinner bezahlt Preis des höchstem Gebotes
+	\item Beste Strategie: biete weniger als der eigentlich wert
+\end{itemize}
+\subsubsection{Vickrey Auction}
+\begin{itemize}
+	\item second preis, sealed bit
+	\item Gewinner mit dem höchstem Gebot zum Preis vom zweit höchstem Gebot
+	\item Beste Strategie: Preisabgabe zum wirklichen Wert
+	\item überbieten wird dominiert durch bieten des echten Wertes: Wenn Bieter höheren Wert als die anderen gewinnt dieser obwohl er überboten hat; wenn Bieter niedrigeren Wert als andere Bieter hat er verloren obwohl überboten hat oder nicht
+	\item unterbieten wird dominiert durch bieten des echten Wertes: wenn Bieter zu gering verliert er; wenn Bieter zu hoch wird er gewinnen
+	\item anfällig für antisoziales Verhalten
+	\begin{itemize}
+		\item Agent A beziffert den Wert bei 90\$ und weiß, dass Agent B 100\$ bieten würde.
+		\item Agent A kann Zuschlag also nicht bekommen.
+		\item Stattdessen bietet Agent A 99\$ um den Preis für Agent B in die Höhe zu treiben und diesem so zu schaden.
+	\end{itemize}
+\end{itemize}
+\subsection{Probleme}
+\begin{itemize}
+	\item Auktionen sind anfällig für Lügen vom Auktionator und Absprache von Bietern
+	\item alle Auktionen sind können manipuliert werden durch Absprache der Bieter
+	\item ein böser Auktionator kann bei der Vickrey Auktion lügen beim zweit höchsten Gebot
+	\item Shills (Lockvögel) können bei der Englischen Auktion den Preis in die Höhe treiben
+	\item Anwendung von Auktionieren: Lastverteilung, Routing, Koordination
+\end{itemize}
+\end{multicols}
 \subsection{What is an task-oriented domain and how can we find a good strategy?}
 %TODO What is an task-oriented domain and how can we find a good strategy?
+\begin{itemize}
+	\item Eine TOD ist ein Tripel $<T,Ag,c>$ mit \begin{itemize}
+		\item Menge $T$ aller möglichen Aufgaben
+		\item Menge $Ag=\{1..n\}$ aller teilnehmenden Agenten
+		\item Die Kostenfunktion $c = \mathfrak{P}(T)\rightarrow\mathbb{R}^+$ für Mengen von Aufgaben.
+	\end{itemize}
+	\item Mehrere Agenten haben mehrere Aufgaben, die erledigt werden müssen.
+	\item 
+\end{itemize}
 \subsection{What do we need to consider in negotiations, e.g. referring to lying.}
 %TODO What do we need to consider in negotiations, e.g. referring to lying.
 \subsection{Zeuthen strategy explain?}
