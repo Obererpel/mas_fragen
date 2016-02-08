@@ -1,13 +1,11 @@
 \section{Negotiation Auction}
 \subsection{Why do agents need to negotiate?}
-%CHECK Why do agents need to negotiate?
 \begin{itemize}
 	\item Häufig gibt es Ressourcen, die ein Agent besitzt, die jedoch andere Agenten auch haben wollen.
 	\item Da die Ressource nur an einen (oder wenige) Agenten weitergegeben werden kann, muss dieser eine irgendwie bestimmt werden.
 	\item Weiterhin können sich Agenten Aufgaben untereinander aufteilen.
 \end{itemize}
 \subsection{The desirable properties of the rules of encounters, give example what are the implications of the different auctions?}
-%CHECK The desirable properties of the rules of encounters, give example what are the implications of the different auctions?
 Geklaut aus der Zsf.
 \begin{multicols}{2}
 \subsubsection{Englische Auktion}
@@ -56,17 +54,24 @@ Geklaut aus der Zsf.
 \end{itemize}
 \end{multicols}
 \subsection{What is an task-oriented domain and how can we find a good strategy?}
-%TODO What is an task-oriented domain and how can we find a good strategy?
 \begin{itemize}
 	\item Eine TOD ist ein Tripel $<T,Ag,c>$ mit \begin{itemize}
 		\item Menge $T$ aller möglichen Aufgaben
 		\item Menge $Ag=\{1..n\}$ aller teilnehmenden Agenten
 		\item Die Kostenfunktion $c = \mathfrak{P}(T)\rightarrow\mathbb{R}^+$ für Mengen von Aufgaben.
 	\end{itemize}
-	\item Mehrere Agenten haben mehrere Aufgaben, die erledigt werden müssen.
-	\item 
+	\item Begegnung: Ausgangszuweisung der Aufgaben bei treffen zweier Agenten
+	\item Deal: Zuweisung aus den Aufgaben einer Begegung (Konflikt-Deal: Standardzuweisung)
+	\item Gesucht: Zuweisung der Aufgaben an Agenten so das diese optimal ist
+	\item Monotones Konzessions Protokoll (MKPs)
+	\item Zeuthen Strategy
 \end{itemize}
 \subsection{What do we need to consider in negotiations, e.g. referring to lying.}
-%TODO What do we need to consider in negotiations, e.g. referring to lying.
+Auktionen können immer beinflusst werden (Shills, Verbrüderung der Agenten), Vertrauen an den Auktionator muss gegeben sein
 \subsection{Zeuthen strategy explain?}
-%TODO Zeuthen strategy explain?
+\begin{itemize}
+	\item Lösung einiger Fragen aus dem MKP
+	\item Was sollte das erste Angebot eines Agenten sein? Deal welcher vom Agenten am meisten bevorzugt wird
+	\item Welcher Agent sollte sich anpassen? ???TODO???
+	\item Wie sollte das neue Angebot jede Runde aussehen?  Zugeständniss nur soweit dass Agent das Risiko ausgleicht
+\end{itemize}
