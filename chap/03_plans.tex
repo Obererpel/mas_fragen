@@ -26,6 +26,32 @@
 	\item Problem: Commmitments brauchen viel Rechenzeit (ständige neu Ermittelung usw)
 \end{itemize}
 \subsection{What is a plan and how are those developed, present a simple algorithm and describe its characteristics!}
+\begin{itemize}
+	\item generiert ein Plan (Folge von Aktion)
+	\item Eingabe: Startzustand + Zielzustand, jeweils mit  Eigenschaften die in dem Zustand geleten
+	\item Gesucht: Folge von Aktionen (Spezifiziert durch Name, Vorbedingungen und Nachbedinungen) welche vom Startzustand in den Zielzustand überführen
+	\item Es muss gelten: Die Folge der Aktionen behindern sich nicht gegenseitig d.h. wenn Plan A,B,C darf A die Ausführung von B,C nicht behindern (Vorbedingungen und Nachbedingungen müssen übereinstimmen)
+	\item Theorie: Ordnungsrelation für Aktionen $A \prec B$ (A muss vor B ausgeführt werden ($TakeCofee \prec DrinkCoffe$)), kausale Ordnung für Relationen $A \rightarrow B$ (Ausführung von A macht die Vorbedingungen von B wahr)
+	\item Plan-Eigenschaften: TODO
+	\item POP-Algorithmus:
+	\begin{itemize}
+		\item Start-Plan: Start $\rightarrow$ Ziels
+		\item Rückwärts auflösen von offenen Bedingungen (passende Aktion wählen)
+		\item Schrittweise Berücksichtigung der Ordnungsrelation und kausalen Ordnung
+		\item wenn Konflikt d.h kausale Ordnung verletzt: Demotion (Konflikt-Aktion vorher ausführen) oder Promotion (Konflikt-Aktion hinterher ausführen)
+		\item wenn dadurch wieder Konflikt $\rightarrow$ Backtracking
+	\end{itemize}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+\end{itemize}
 %TODO What is a plan and how are those developed, present a simple algorithm and describe its characteristics!
 \subsection{Different types of committment, what can we be committed to?}
-%TODO Different types of committment, what can we be committed to?
+\begin{itemize}
+	\item BDI-Agent
+	\item Situation: Agent hat Plan generiert
+	\item Commitment beschreiben Arten von der Abarbeitung des Plans
+	\item Closed-Minded-Commitment (Standard): Agent generiert Plan und führt diesen aus (Problem: ggf kann Intention eigentlich nicht mehr erreicht werden während der Abarbeitung)
+	\item Single-Minded-Commitment: Agent führt Plan schrittweise aus, nach jeden Schritt B aktualisieren und Überprüfung ob I noch erreicht werden kann (Agent führt Plan solange aus bis dieser abgearbeitet wurde oder das aktuelle I nicht mehr erreicht werden kann)
+	\item Open-Minded-Commitment: Agent führt Plan schrittweise aus, nach jedem Schritt B,D,I aktualisieren und Überprüfung ob I noch durch Plan erreicht wird falls nicht: neuen Plan für neus I
+\end{itemize}
